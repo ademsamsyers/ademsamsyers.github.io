@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle - Full Screen Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="img/2.png" alt="Logo" class="main-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="motorcycle.html">MOTORCYCLE</a></li>
+            <li><a href="accessories.html">ACCESSORIES</a></li>
+            <li><a href="event.html">EVENT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+	 <section class="motor-collection-section">
+    <h1 class="collection-title">HARLEY DAVIDSON</h1>
+    
+    <div class="full-width-list">
+        </div>
+</section>
+		 
+    <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+            <div class="slide"><img src="img/1.jpg" alt="Motor 1"></div>
+            <div class="slide"><img src="img/3.jpg" alt="Motor 2"></div>
+            <div class="slide"><img src="img/7.jpg" alt="Motor 3"></div>
+			<div class="slide"><img src="img/8.jpg" alt="Motor 3"></div>
+        </div>
+
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+	
+<section class="content-block">
+    <div class="container">
+        <div class="block-image">
+            <img src="img/9.webp" alt="Harley Building">
+        </div>
+        <div class="block-text">
+            <h2>Our Heritage</h2>
+            <p>Harley Davidson is one of the most iconic motorcycle manufacturers in the world, founded in 1903 in Milwaukee, Wisconsin, USA. With over a century of history, the brand has become a global symbol of freedom, power, and individuality.</p>
+            <p>Today, Harley-Davidson continues to evolve by combining its classic heritage with modern technology, performance innovation, and new models designed for the next generation of riders.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-block bg-darker">
+    <div class="container reverse">
+        <div class="block-text">
+            <h2>The highlight</h2>
+            <ul class="specs-list">
+                <li>Founded in 1903, one of the oldest motorcycle brands in the world</li>
+                <li>Known for V-Twin engines and iconic design</li>
+                <li>Strong global rider community and lifestyle culture</li>
+                <li>Wide range of motorcycles: cruiser, touring, sport, and adventure</li>
+                <li>A symbol of freedom, independence, and brotherhood</li>
+            </ul>
+        </div>
+        <div class="block-image">
+            <img src="img/4.jpg" alt="Harley Museum">
+        </div>
+    </div>
+</section>
+
+<section class="motor-animation-area" id="motorSection">
+    <div class="road-line"></div>
+    <img src="img/10.png" id="movingMotor" alt="Riding Motor">
+</section>
+
+	<section class="museum-section">
+    <div class="museum-header">
+        <h1 class="museum-title">MUSEUM GALLERY</h1>
+        <div class="museum-line"></div>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="gallery-row">
+            <div class="gallery-card">
+                <div class="img-frame" onclick="openPopup(this)">
+                    <img src="img/15.jpg" alt="The Motorcycle Galleries">
+                </div>
+                <a href="the galeri.html" class="gallery-link">The Motorcycle Galleries </a>
+            </div>
+
+            <div class="gallery-card">
+                <div class="img-frame" onclick="openPopup(this)">
+                    <img src="img/16.jpg" alt="TSUNAMI MOTORCYCLE DISPLAY">
+                </div>
+                <a href="tsunami.html" class="gallery-link">TSUNAMI MOTORCYCLE DISPLAY</a>
+            </div>
+        </div>
+
+        <div class="gallery-row">
+            <div class="gallery-card">
+                <div class="img-frame" onclick="openPopup(this)">
+                    <img src="img/17.webp" alt="Engine Room">
+                </div>
+                <a href="engine.html" class="gallery-link">Engine Room</a>
+            </div>
+
+            <div class="gallery-card">
+                <div class="img-frame" onclick="openPopup(this)">
+                    <img src="img/18.jpg" alt="Tank Wall">
+                </div>
+                <a href="tank.html" class="gallery-link">Tank Wall</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="cinematic-slider-section">
+    <div class="slider-bg-blur">
+        <img src="img/19.jpg" alt="Background">
+    </div>
+
+    <div class="swiper cinematicSwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="wide-card">
+                    <div class="wide-img-container" onclick="openPopup(this)">
+                        <img src="img/20.png" alt="Legacy" class="fit-img">
+                    </div>
+                    <div class="wide-info-box">
+                        <span class="orange-line"></span>
+                        <span class="tag">01. HERITAGE</span>
+                        <h2>Grand American Touring</h2>
+                        <p>The category we've created from the ground up. Go the distance, in style. Discover the wide-open world and freedom for the soul on bikes only Harley-Davidson could build.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="wide-card">
+                    <div class="wide-img-container" onclick="openPopup(this)">
+                        <img src="img/21.png" alt="Custom" class="fit-img">
+                    </div>
+                    <div class="wide-info-box">
+                        <span class="orange-line"></span>
+                        <span class="tag">02. IDENTITY</span>
+                        <h2>Cruiser</h2>
+                        <p>Authentic heritage meets modern technology for power, style, and the unadulterated riding experience  around town or along country roads.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="wide-card">
+                    <div class="wide-img-container" onclick="openPopup(this)">
+                        <img src="img/23.png" alt="Racing" class="fit-img">
+                    </div>
+                    <div class="wide-info-box">
+                        <span class="orange-line"></span>
+                        <span class="tag">03. PERFORMANCE</span>
+                        <h2>Adventure Touring</h2>
+                        <p>Where touring becomes detouring, and everything is a road.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="wide-card">
+                    <div class="wide-img-container" onclick="openPopup(this)">
+                        <img src="img/22.png" alt="Community" class="fit-img">
+                    </div>
+                    <div class="wide-info-box">
+                        <span class="orange-line"></span>
+                        <span class="tag">04. BROTHERHOOD</span>
+                        <h2>Sport</h2>
+                        <p>A category created by the venerable Sportster. Iconic design, authentic sound. These are bikes built for carving mountain roads and blasting through city streets.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="more-container">
+        <a href="motorcycle.html" class="glowing-btn">MORE</a>
+    </div>
+</section>
+	
+<section class="accessories-full-section">
+    <div class="acc-content-overlay">
+        <span class="acc-category">GENUINE MOTOR PARTS</span>
+        
+        <h2 class="acc-main-title">ACCESSORIES FOR ALl&nbsp;</h2>
+        <h2 class="acc-main-title">riders NEEDS</h2>
+<div class="acc-button-wrapper">
+        <a href="accessories.html" class="btn-explore-premium">
+            EXPLORE NOW <span class="arrow-icon">→</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="acc-bg-image">
+        <img src="img/67.jpg" alt="Accessories Banner">
+        <div class="dark-gradient-overlay"></div> </div>
+</section>
+	
+<section class="event-full-section">
+    <div class="acc-content-overlay">
+        <span class="acc-category">the lagency</span>
+        
+        <h2 class="acc-main-title">event for bikers&nbsp;</h2>
+<div class="acc-button-wrapper">
+        <a href="event.html" class="btn-explore-premium">
+            EXPLORE NOW <span class="arrow-icon">→</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="acc-bg-image">
+      <img src="img/82.jpg" alt="event  Banner">
+        <div class="dark-gradient-overlay"></div> </div>
+</section>
+	
+	<section class="accessories-full-section">
+    <div class="acc-content-overlay">
+        <span class="acc-category">there one is near you</span>
+        
+        <h2 class="acc-main-title">contact us&nbsp;</h2>
+<div class="acc-button-wrapper">
+        <a href="contact.html" class="btn-explore-premium">
+            EXPLORE NOW <span class="arrow-icon">→</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="acc-bg-image">
+        <img src="img/80.jpg" alt="Accessories Banner">
+        <div class="dark-gradient-overlay"></div> </div>
+</section>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<footer class="hd-footer-clean">
+    
+    <div class="footer-logo-section">
+        <h1 class="footer-logo-outline">HARLEY-DAVIDSON</h1>
+        <p class="footer-sub-tag">PETALING JAYA | MALAYSIA</p>
+    </div>
+
+    <div class="footer-social-section">
+        <div class="social-grid">
+            <a href="https://www.instagram.com/harleydavidson_asia/" class="social-icon-link" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/HarleyDavidsonPJ/" class="social-icon-link" target="_blank" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/harleydavidson" class="social-icon-link" target="_blank" title="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            
+            <a href="https://www.youtube.com/harleydavidson" class="social-icon-link" target="_blank" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@harleydavidson?lang=en" class="social-icon-link" target="_blank" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-legal-bar">
+        <div class="legal-content">
+            <p class="copyright-text">
+                © 2026 HARLEY-DAVIDSON PETALING JAYA (TELAGAMAS MOBILITY SDN BHD) 
+                <span class="pipe">|</span> 
+                <a href="privacy.html">Privacy Policy.</a> 
+                <a href="cookie.html">Cookie Policy.</a> 
+            </p>
+            
+            <div class="brand-name-footer">HARLEY-DAVIDSON</div>
+        </div>
+    </div>
+
+</footer>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

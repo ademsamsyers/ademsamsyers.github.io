@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle - Full Screen Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/motorcycle.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="img/2.png" alt="Logo" class="main-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="motorcycle.html" class="active">MOTORCYCLE</a></li>
+            <li><a href="accessories.html">ACCESSORIES</a></li>
+            <li><a href="event.html">EVENT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section class="motor-wrapper">
+        <h1 class="main-title">MOTORCYCLE COLLECTION</h1>
+
+        <div class="full-width-list">
+            <div class="motor-item" onclick="openPopup(this)">
+                <img src="img/12.jpg" alt="Grand American Touring">
+                <div class="overlay">
+                    <div class="info">
+                        <span class="category">Touring</span>
+                        <h3>Grand American Touring</h3>
+						<a href="grand american touring.html" class="btn-explore">EXPLORE</a>
+</div>
+						    
+                    </div>
+                </div>
+            </div>
+
+            <div class="motor-item" onclick="openPopup(this)">
+                <img src="img/11.webp" alt="Cruiser">
+                <div class="overlay">
+                    <div class="info">
+                        <span class="category">CruiseR</span>
+                        <h3>The Classic Cruiser</h3>
+                						<a href="cruiser.html" class="btn-explore">EXPLORE</a>
+</div>
+                </div>
+            </div>
+
+            <div class="motor-item" onclick="openPopup(this)">
+                <img src="img/13.jpg" alt="Adventure Touring">
+                <div class="overlay">
+                    <div class="info">
+                        <span class="category">Adventure</span>
+                        <h3>Adventure Touring</h3>
+     <a href="adventure.html" class="btn-explore">EXPLORE</a>
+</div>
+                </div>
+            </div>
+
+            <div class="motor-item" onclick="openPopup(this)">
+                <img src="img/14.jpg" alt="Sport">
+                <div class="overlay">
+                    <div class="info">
+                        <span class="category">Performance</span>
+                        <h3>Sport Model</h3>
+                        <a href="sport.html" class="btn-explore">EXPLORE</a>
+</div>
+                </div>
+            </div>
+    </section>
+
+    <div id="motorModal" class="modal" onclick="closePopup()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="imgPopup">
+        <div id="caption"></div>
+    </div>
+    <script src="js/motorcycle.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<footer class="hd-footer-clean">
+    
+    <div class="footer-logo-section">
+        <h1 class="footer-logo-outline">HARLEY-DAVIDSON</h1>
+        <p class="footer-sub-tag">PETALING JAYA | MALAYSIA</p>
+    </div>
+
+    <div class="footer-social-section">
+        <div class="social-grid">
+            <a href="https://www.instagram.com/harleydavidson_asia/" class="social-icon-link" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/HarleyDavidsonPJ/" class="social-icon-link" target="_blank" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://x.com/harleydavidson" class="social-icon-link" target="_blank" title="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            
+            <a href="https://www.youtube.com/harleydavidson" class="social-icon-link" target="_blank" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@harleydavidson?lang=en" class="social-icon-link" target="_blank" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-legal-bar">
+        <div class="legal-content">
+            <p class="copyright-text">
+                © 2026 HARLEY-DAVIDSON PETALING JAYA (TELAGAMAS MOBILITY SDN BHD) 
+                <span class="pipe">|</span> 
+                <a href="privacy.html">Privacy Policy.</a> 
+                <a href="cookie.html">Cookie Policy.</a> 
+            </p>
+            
+            <div class="brand-name-footer">HARLEY-DAVIDSON</div>
+        </div>
+    </div>
+
+</footer>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
+
+
