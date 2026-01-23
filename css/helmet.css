@@ -1,0 +1,195 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Elakkan scroll kiri-kanan */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+}
+
+.main-logo { height: 140px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #ff6600; }
+
+/* --- DESIGN TULISAN HELMET BARU --- */
+.helmet-title-container {
+    text-align: center;
+    padding: 60px 0 20px 0; /* Jarak atas dan bawah */
+    background: #000; /* Kekalkan tema hitam */
+}
+
+.helmet-sub {
+    color: #ff6600; /* Warna oren signature */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 6px; /* Jarakkan huruf bagi nampak mahal */
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.helmet-main-text {
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 85px; /* Saiz besar gempak */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin: 0;
+    line-height: 1;
+    /* Effect bayang supaya nampak timbul */
+    text-shadow: 4px 4px 0px rgba(255, 102, 0, 0.2); 
+}
+
+.helmet-line {
+    width: 100px;
+    height: 4px;
+    background: #ff6600;
+    margin: 20px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Responsif untuk Phone */
+@media (max-width: 768px) {
+    .helmet-main-text {
+        font-size: 50px;
+        letter-spacing: 6px;
+    }
+    .helmet-sub {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+}
+
+/* Container Utama untuk susunan melintang */
+.helmet-grid-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antara setiap baris produk */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Kotak Produk (Horizontal Card) */
+.helmet-card-horizontal {
+    display: flex;
+    align-items: center; /* Seimbangkan gambar & teks di tengah */
+    border: 1px solid #ff6600; /* Border oren signature kau */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: 0.4s ease;
+}
+
+/* Bahagian Kiri: Gambar */
+.helmet-img-box {
+    flex: 1; /* Ambil ruang kiri */
+    max-width: 250px;
+    padding-right: 40px;
+    border-right: 1px solid rgba(255, 102, 0, 0.2); /* Garisan pemisah halus */
+}
+
+.helmet-img-box img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* Bahagian Kanan: Informasi */
+.helmet-info-box {
+    flex: 2; /* Ambil lebih banyak ruang untuk teks */
+    padding-left: 40px;
+    text-align: left; /* Teks rapat ke kiri */
+}
+
+.helmet-name {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.orange-divider-small {
+    width: 40px;
+    height: 3px;
+    background-color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.helmet-description {
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px; /* Saiz kecil yang kau nak */
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Kesan Hover */
+.helmet-card-horizontal:hover {
+    background: rgba(255, 102, 0, 0.05);
+    transform: translateX(10px); /* Gerak sikit ke kanan bila hover */
+    box-shadow: -5px 0 15px rgba(255, 102, 0, 0.2);
+}
+
+/* Tombol Kembali */
+.nav-back-container {
+    text-align: center;
+    padding: 50px 0;
+    background: #000;
+}
+
+.btn-back-square {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #ff6600;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-back-square:hover {
+    background: #ff6600;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .helmet-grid-square {
+        grid-template-columns: 1px; /* Jadi satu baris kat phone */
+    }
+}
+

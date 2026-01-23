@@ -1,0 +1,507 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Elakkan scroll kiri-kanan */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+}
+
+.main-logo { height: 140px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #ff6600; }
+
+/* --- EVENT HEADER & VIDEO AUTO-PLAY (WIDE VERSION) --- */
+.event-header-section {
+    background: #000;
+    padding-top: 60px;
+    width: 100%;
+}
+
+.event-main-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.event-main-title h1 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 12px; /* Jarakkan sikit tulisan bagi nampak mahal */
+    margin: 10px 0;
+}
+
+/* VIDEO STYLING (LEBAR PENUH) */
+.event-video-fluid {
+    width: 100vw; /* Lebar ikut skrin (Viewport Width) */
+    height: 90vh; /* Tinggi gergasi (90% skrin) */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    background: #000;
+}
+
+.event-autoplay-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video akan penuh tanpa border hitam kat tepi */
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .event-main-title h1 {
+        font-size: 2.8rem;
+        letter-spacing: 5px;
+    }
+    .event-video-fluid {
+        height: 50vh; /* Sederhana lebar untuk mobile */
+    }
+}
+
+/* --- SECTION WRAPPER & BACKGROUND BLUR --- */
+.blurred-section-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.main-bg-blur {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* LETAK GAMBAR KAU KAT SINI */
+    background-image: url('../img/bg-motor.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(15px) brightness(0.2); /* Blur & Gelapkan BG */
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.content-container-wide {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px; /* Lebarkan container */
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* --- CARD LEBAR & SHINE EFFECT --- */
+.showcase-card-wide {
+    display: flex;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff6600;
+    border-radius: 15px;
+    margin-bottom: 60px;
+    padding: 40px;
+    gap: 50px;
+    box-shadow: 0 0 40px rgba(255, 102, 0, 0.2);
+}
+
+.showcase-card-wide.reverse { flex-direction: row-reverse; }
+
+.card-image-box {
+    flex: 1.2;
+    position: relative;
+    height: 720px; /* Imej lebih besar */
+    border: 3px solid #ff6600;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+/* EFEK SHINE (KILAT) */
+.shine-layer {
+    position: absolute;
+    top: 0; left: -150%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.6s;
+    z-index: 5;
+}
+
+.card-image-box:hover .shine-layer {
+    left: 150%; /* Kilat lalu bila hover */
+}
+
+/* --- TEXT STYLING --- */
+.card-info-box { flex: 1; }
+.status-label { color: #ff6600; letter-spacing: 3px; font-weight: bold; }
+.card-info-box h2 { 
+    font-size: 4rem; /* Tulisan lebih gempak */
+    color: #fff; margin: 15px 0; 
+    font-family: 'Oswald', sans-serif;
+}
+.info-bar {
+    background: rgba(255, 102, 0, 0.1);
+    border-left: 5px solid #ff6600;
+    padding: 10px 20px;
+    color: #fff; font-weight: bold; margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .showcase-card-wide, .showcase-card-wide.reverse { flex-direction: column; text-align: center; }
+    .card-image-box { width: 100%; height: 300px; }
+}
+
+
+/* Tulisan Style */
+.card-content {
+    flex: 1.2;
+}
+
+.status-tag {
+    color: #ff6600;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-content h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 10px 0;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+}
+
+.stats-highlight {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-left: 4px solid #ff6600;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.card-content p {
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 2.1rem;
+}
+
+/* Responsive untuk Phone */
+@media (max-width: 900px) {
+    .showcase-card, .showcase-card.reverse {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .card-image {
+        width: 100%;
+        height: 250px;
+    }
+    .card-content h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* --- FULL MOMENT GALLERY (SQUARE & WIDE) --- */
+.full-moment-gallery {
+    background: #000;
+    padding: 100px 0 0 0;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tetap 4 column */
+    grid-auto-rows: 450px; /* Tinggi setiap baris (kawall saiz square) */
+    grid-auto-flow: dense;
+    gap: 8px; /* Jarak antara gambar */
+    width: 100%;
+}
+
+.moment-box {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+/* Default: Segi Empat Sama (Logic grid 4 column + rows 350px) */
+.moment-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+/* Segi Empat Tepat (Melintang) */
+.moment-box.span-wide {
+    grid-column: span 2;
+}
+
+/* Hover Effect */
+.moment-box:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Responsive: Untuk nampak cantik kat phone */
+@media (max-width: 900px) {
+    .impact-grid {
+        grid-template-columns: repeat(2, 1px);
+        grid-auto-rows: 250px; /* Kecilkan sikit tinggi baris kat mobile */
+    }
+}
+
+/* --- BOTTOM NAVIGATION STYLE --- */
+.bottom-nav-section {
+    padding: 100px 0 80px;
+    background: #000;
+    text-align: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Garisan pemisah atas butang */
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ff6600, transparent);
+    margin-bottom: 50px;
+}
+
+/* Button Styling */
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    background: transparent;
+    border: 2px solid #ff6600;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.btn-back-home .icon {
+    font-size: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect: Glowing & Sliding */
+.btn-back-home:hover {
+    background: #ff6600;
+    color: #000;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+.btn-back-home:hover .icon {
+    transform: translateX(-8px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .btn-back-home {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+/* --- CENTER GALLERY HEADER --- */
+.gallery-center-header {
+    text-align: center;      /* Centerkan semua tulisan */
+    padding: 80px 20px 50px; /* Jarak atas dan bawah */
+    background: #000;        /* Pastikan background hitam */
+}
+
+.orange-badge {
+    display: inline-block;
+    background: #ff6600;
+    color: #000;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.1rem;      /* Besarkan sikit tag ni */
+    margin-bottom: 20px;
+}
+
+.gallery-center-header h2 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;      /* Ini untuk buat tulisan besar gempak */
+    text-transform: uppercase;
+    letter-spacing: 8px;    /* Jarak antara huruf bagi nampak premium */
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* RESPONSIVE: Supaya kat phone tak terlalu besar sangat */
+@media (max-width: 768px) {
+    .gallery-center-header h2 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+}
+
+/* --- ULTIMATE CLEAN FOOTER CSS --- */
+.hd-footer-clean {
+    background: #000;
+    width: 100%;
+    color: #fff;
+    padding-top: 100px;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Logo Outline Header */
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.footer-logo-outline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    letter-spacing: 20px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.footer-sub-tag {
+    color: #ff6600;
+    letter-spacing: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+/* Social Media Grid */
+.footer-social-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #111;
+}
+
+.social-grid {
+    display: flex;
+    gap: 45px;
+}
+
+.social-icon-link {
+    color: #ffffff;
+    font-size: 26px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-link:hover {
+    color: #ff6600;
+    transform: translateY(-8px);
+    filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.7));
+}
+
+/* Legal Bar Style (Porsche Look) */
+.footer-legal-bar {
+    padding: 50px 20px;
+    background: #050505;
+    border-top: 1px solid #111;
+}
+
+.legal-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 11px;
+    color: #666;
+    line-height: 2.2;
+    font-family: Arial, sans-serif;
+}
+
+.copyright-text a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.copyright-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.pipe {
+    margin: 0 10px;
+    color: #222;
+}
+
+/* Stealth Branding */
+.brand-name-footer {
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+    letter-spacing: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 40px;
+    opacity: 0.05;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-logo-outline { font-size: 35px; letter-spacing: 8px; }
+    .social-grid { gap: 25px; }
+    .brand-name-footer { font-size: 20px; letter-spacing: 10px; }
+}

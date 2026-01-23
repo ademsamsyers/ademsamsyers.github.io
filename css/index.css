@@ -1,0 +1,939 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Elakkan scroll kiri-kanan */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+}
+.main-logo { height: 140px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #ff6600; }
+
+/* --- MOTORCYCLE COLLECTION SECTION --- */
+.motor-collection-section {
+    width: 100%;
+    background-color: #000;
+    padding: 20px 0; /* Ruang atas dan bawah */
+}
+
+/* Ini kod untuk tengahkan tajuk tu */
+.collection-title {
+    font-family: 'Oswald', sans-serif; 
+    text-align: center;               /* Ketengahkan teks */
+    color: #fff;
+    font-size: 65px;                /* Saiz besar dan gah */
+    letter-spacing: 10px;             /* Jarak antara huruf */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 100%;                      /* Guna lebar penuh untuk center yang tepat */
+}
+
+.full-width-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 90px;                        /* Jarak sikit antara gambar */
+}
+
+.motor-item {
+    position: relative;
+    width: 100vw;                     /* Full width kanan ke kiri */
+    height: 80vh;                     /* Tinggi yang gah */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.motor-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                /* Motor nampak jelas & tak terpenyek */
+    object-position: center;
+    filter: brightness(0.7);          /* Gelap sikit supaya tulisan nampak */
+    transition: 0.6s ease-in-out;
+}
+
+/* Kesan bila mouse lalu (Hover) */
+.motor-item:hover img {
+    filter: brightness(1);            /* Gambar jadi terang */
+    transform: scale(1.05);           /* Zoom sikit */
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+}
+
+.info h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* SLIDER */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Tukar ke 80vh jika tak nak full screen */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.slider-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    /* Ini untuk pastikan content di dalam slide sentiasa centre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+/* BUTTONS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.next { right: 10px; }
+.prev { left: 10px; }
+
+/* Container Utama untuk Center-kan Content */
+.container {
+    max-width: 1200px; /* Lebar maksimum content */
+    margin: 0 auto;    /* Center-kan container */
+    display: flex;
+    align-items: center; /* Center secara menegak */
+    justify-content: center; /* Center secara mendatar */
+    gap: 60px;         /* Jarak antara gambar dan teks */
+    padding: 100px 20px;
+}
+
+.content-block {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+}
+
+.bg-darker {
+    background-color: #050505; /* Beza sikit warna untuk nampak depth */
+}
+
+/* Biar gambar fit dengan cantik */
+.block-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.block-image img {
+    width: 100%;
+    max-width: 550px; /* Kawal saiz gambar supaya tak terlalu besar */
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Kemaskan tulisan */
+.block-text {
+    flex: 1;
+}
+
+.block-text h2 {
+    color: #ff6600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.block-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #ccc;
+    text-align: justify; /* Nampak lebih kemas macam buku */
+}
+
+/* Kemaskan Specs List */
+.specs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specs-list li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    border-bottom: 1px solid #222;
+    font-weight: bold;
+}
+
+.specs-list li::before {
+    content: "•";
+    color: #ff6600;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Alignment untuk baris terbalik */
+.container.reverse {
+    flex-direction: row-reverse;
+}
+
+.motor-animation-area {
+    background-color: #000;
+    height: 400px; /* Tinggi kawasan motor */
+    position: relative;
+    overflow: hidden; /* Supaya motor tak nampak masa kat luar skrin */
+    width: 100%;
+    border-top: 1px solid #222;
+}
+
+#movingMotor {
+    width: 450px;
+    position: absolute;
+    bottom: 15%; /* Kedudukan atas jalan */
+    left: 500px; /* Standby kat luar skrin kiri */
+    z-index: 10;
+    transition: transform 1.1s ease-out;
+	transition: transform 1.1 ease-in; 
+}
+
+.road-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    bottom: 25%;
+}
+
+/* --- MUSEUM SECTION DENGAN BLUR BACKGROUND --- */
+.museum-section {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden; /* Supaya blur tak keluar dari section */
+    background-color: #000;
+}
+
+/* BACKGROUND IMAGE DENGAN BLUR */
+.museum-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../img/9.webp'); /* Letak gambar background kau kat sini */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Kesan parallax sikit */
+    filter: blur(8px) brightness(0.4); /* Tahap blur dan gelap */
+    z-index: 1;
+}
+
+/* Pastikan content duduk atas background */
+.museum-header, .gallery-container {
+    position: relative;
+    z-index: 2;
+}
+
+.museum-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.museum-line {
+    width: 80px;
+    height: 4px;
+    background: #ff6600;
+    margin: 15px auto 50px;
+    box-shadow: 0 0 15px #ff6600;
+}
+
+.gallery-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.gallery-card {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-frame {
+    width: 100%;
+    height: 300px;
+    border: 4px solid rgba(255, 255, 255, 0.1); /* Border lebih halus sikit */
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: rgba(17, 17, 17, 0.8); /* Semi-transparent box */
+}
+
+.img-frame:hover {
+    border-color: #ff6600;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.5);
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.gallery-link {
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Tulisan nampak jelas */
+}
+
+.gallery-link:hover {
+    color: #ff6600;
+}
+
+/* --- CINEMATIC SLIDER FIX --- */
+.cinematic-slider-section {
+    position: relative;
+    padding: 80px 0;
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background Blur */
+.slider-bg-blur {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.slider-bg-blur img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: blur(20px) brightness(0.25);
+    transform: scale(1.1);
+}
+
+.cinematicSwiper {
+    width: 90%;
+    max-width: 1100px;
+    z-index: 1;
+}
+
+.wide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px;
+}
+
+/* FIX: IMAGE CONTAINER */
+.wide-img-container {
+    width: 100%;
+    height: 400px; /* Tinggi yang seimbang */
+    background: #0a0a0a; /* Latar gelap untuk gambar */
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center; /* Center mendatar */
+    align-items: center;     /* Center menegak */
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* FIX: GAMBAR TIDAK TERPOTONG */
+.fit-img {
+    max-width: 95%;  /* Ruang bernafas kiri-kanan */
+    max-height: 95%; /* Ruang bernafas atas-bawah */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Gambar nampak penuh & tidak zoom-in keterlaluan */
+    transition: 0.5s ease;
+}
+
+.wide-img-container:hover {
+    border-color: #ff6600;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.4);
+}
+
+/* TEKS */
+.wide-info-box {
+    padding-top: 35px;
+    text-align: center;
+}
+
+.orange-line {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff6600;
+    margin: 0 auto 20px;
+}
+
+.wide-info-box h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.wide-info-box p {
+    color: #bbb;
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* BUTTON MORE */
+.more-container { text-align: center; z-index: 2; margin-top: 40px; }
+
+.glowing-btn {
+    display: inline-block;
+    padding: 15px 70px;
+    border: 2px solid #ff6600;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    letter-spacing: 4px;
+    transition: 0.4s;
+}
+
+.glowing-btn:hover {
+    background: #ff6600;
+    color: #000;
+    box-shadow: 0 0 40px #ff6600;
+}
+
+/* Navigasi */
+.swiper-button-next, .swiper-button-prev { color: #ff6600 !important; }
+
+/* --- FIX: ACCESSORIES GIANT GRID --- */
+.accessories-section {
+    position: relative;
+    padding: 120px 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.acc-bg-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+.acc-bg-container img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.15) blur(15px);
+}
+
+.container-giant {
+    max-width: 1600px; /* Saiz lebar untuk kotak gergasi */
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.acc-header { text-align: center; margin-bottom: 80px; }
+.premium-label {
+    background: #ff6600; color: #000; padding: 10px 30px;
+    font-family: 'Oswald', sans-serif; font-weight: bold;
+    letter-spacing: 4px; text-transform: uppercase;
+}
+.acc-header h2 {
+    color: #fff; font-size: 4.5rem; font-family: 'Oswald', sans-serif;
+    margin-top: 25px; letter-spacing: 5px; text-transform: uppercase;
+}
+
+/* GRID LAYOUT */
+.accessories-grid-giant {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.acc-box-giant {
+    text-decoration: none;
+    position: relative;
+    background: rgba(15, 15, 15, 0.95);
+    border: 3px solid #ff6600;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.2);
+}
+
+/* FIX: BOX CONTENT CENTERED */
+.box-content {
+    height: 480px; /* Tinggi kotak gergasi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px; /* Bagi ruang supaya gambar tak rapat sangat dengan border */
+    background: #0a0a0a;
+}
+
+/* FIX: GAMBAR TAK TERPOTONG & CENTER */
+.product-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Paling penting supaya gambar nampak penuh */
+    transition: 0.6s ease;
+}
+
+/* EFFECT SHINE MANTAP */
+.shine-sweep {
+    position: absolute;
+    top: 0; left: -150%; width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    z-index: 3;
+    transition: 0.7s ease-in-out;
+}
+
+/* HOVER EFFECTS */
+.acc-box-giant:hover {
+    transform: translateY(-15px);
+    border-color: #fff; /* Tukar border jadi putih masa hover */
+    box-shadow: 0 0 50px rgba(255, 102, 0, 0.6);
+}
+
+.acc-box-giant:hover .shine-sweep { left: 150%; }
+.acc-box-giant:hover .product-img { transform: scale(1.1); }
+
+/* FOOTER KOTAK */
+.box-footer {
+    background: #111;
+    padding: 25px;
+    text-align: center;
+    border-top: 2px solid #ff6600;
+}
+.box-footer h3 {
+    color: #fff; font-family: 'Oswald'; font-size: 1.8rem;
+    margin: 0; letter-spacing: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .accessories-grid-giant { grid-template-columns: repeat(2, 1fr); }
+}
+/* --- PREMIUM ACCESSORIES SECTION --- */
+.accessories-full-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Lebihkan sikit tinggi untuk nampak megah */
+    overflow: hidden;
+    background: #000;
+}
+
+/* Gambar Latar & Overlay Gelap */
+.acc-bg-image {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.acc-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Layer hitam lutsinar supaya tulisan 'pop out' */
+.dark-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+/* Layout Tulisan */
+.acc-content-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
+}
+
+/* Gaya Tulisan Kecil Atas */
+.acc-category {
+    color: #ff6600; /* Warna oren signature */
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 5px; /* Jarakkan huruf bagi nampak premium */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Gaya Tajuk Utama */
+.acc-main-title {
+    color: #fff;
+    font-family: 'Oswald', sans-serif; /* Guna font tebal kau */
+    font-size: 55px; /* Saiz besar gempak */
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Design Butang Premium */
+.btn-explore-premium {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-explore-premium:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #ff6600; /* Tukar oren masa hover */
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+}
+
+.arrow-icon {
+    margin-left: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-explore-premium:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .acc-main-title { font-size: 35px; }
+    .acc-content-overlay { padding: 0 20px; text-align: center; align-items: center; }
+    .dark-gradient-overlay { background: rgba(0,0,0,0.5); }
+}
+
+/* --- PREMIUM ACCESSORIES SECTION --- */
+.event-full-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Lebihkan sikit tinggi untuk nampak megah */
+    overflow: hidden;
+    background: #000;
+}
+
+/* Gambar Latar & Overlay Gelap */
+.acc-bg-image {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.acc-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Layer hitam lutsinar supaya tulisan 'pop out' */
+.dark-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+/* Layout Tulisan */
+.acc-content-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
+}
+
+/* Gaya Tulisan Kecil Atas */
+.acc-category {
+    color: #ff6600; /* Warna oren signature */
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 5px; /* Jarakkan huruf bagi nampak premium */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Gaya Tajuk Utama */
+.acc-main-title {
+    color: #fff;
+    font-family: 'Oswald', sans-serif; /* Guna font tebal kau */
+    font-size: 55px; /* Saiz besar gempak */
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Design Butang Premium */
+.btn-explore-premium {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-explore-premium:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #ff6600; /* Tukar oren masa hover */
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+}
+
+.arrow-icon {
+    margin-left: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-explore-premium:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* --- ULTIMATE CLEAN FOOTER CSS --- */
+.hd-footer-clean {
+    background: #000;
+    width: 100%;
+    color: #fff;
+    padding-top: 100px;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Logo Outline Header */
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.footer-logo-outline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    letter-spacing: 20px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.footer-sub-tag {
+    color: #ff6600;
+    letter-spacing: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+/* Social Media Grid */
+.footer-social-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #111;
+}
+
+.social-grid {
+    display: flex;
+    gap: 45px;
+}
+
+.social-icon-link {
+    color: #ffffff;
+    font-size: 26px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-link:hover {
+    color: #ff6600;
+    transform: translateY(-8px);
+    filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.7));
+}
+
+/* Legal Bar Style (Porsche Look) */
+.footer-legal-bar {
+    padding: 50px 20px;
+    background: #050505;
+    border-top: 1px solid #111;
+}
+
+.legal-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 11px;
+    color: #666;
+    line-height: 2.2;
+    font-family: Arial, sans-serif;
+}
+
+.copyright-text a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.copyright-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.pipe {
+    margin: 0 10px;
+    color: #222;
+}
+
+/* Stealth Branding */
+.brand-name-footer {
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+    letter-spacing: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 40px;
+    opacity: 0.05;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-logo-outline { font-size: 35px; letter-spacing: 8px; }
+    .social-grid { gap: 25px; }
+    .brand-name-footer { font-size: 20px; letter-spacing: 10px; }
+}

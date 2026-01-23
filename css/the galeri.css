@@ -1,0 +1,50 @@
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #000; color: #fff; font-family: 'Roboto', sans-serif; }
+
+/* --- NAVBAR KAU --- */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; border-bottom: 1px solid #222; }
+.main-logo { height: 140px; }
+.nav-links { display: flex; list-style: none; gap: 32px; }
+.nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 18px; }
+
+/* --- GALLERY LAYOUT --- */
+.gallery-wrapper { min-height: 100vh; padding-bottom: 100px; }
+
+.navigation-area { max-width: 1200px; margin: 0 auto; padding: 30px 5%; }
+.back-button {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: #fff; border: 1px solid #333; padding: 12px 24px;
+    font-size: 11px; font-weight: bold; letter-spacing: 2px; transition: 0.3s;
+}
+.back-button:hover { border-color: #ff6600; color: #ff6600; background: rgba(255,102,0,0.05); }
+
+.gallery-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 5%;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;
+}
+
+/* Gambar Style */
+.gallery-image { position: relative; overflow: hidden; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+.gallery-image img { width: 100%; display: block; transition: 0.5s; filter: grayscale(20%); }
+.gallery-image:hover img { filter: grayscale(0%); transform: scale(1.02); }
+
+/* Konten Style */
+.gallery-subtitle { font-family: 'Oswald', sans-serif; font-size: 14px; color: #666; letter-spacing: 5px; margin-bottom: 10px; }
+.gallery-title { font-family: 'Oswald', sans-serif; font-size: 4rem; line-height: 1.1; margin-bottom: 30px; letter-spacing: 2px; }
+.accent-text { color: transparent; -webkit-text-stroke: 1px #ff6600; }
+
+.info-box { border-left: 2px solid #ff6600; padding-left: 25px; margin-bottom: 40px; }
+.info-box p { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 20px; font-weight: 300; }
+
+.gallery-footer-info { font-size: 12px; font-weight: bold; letter-spacing: 1px; color: #444; }
+.info-label { color: #ff6600; margin-right: 5px; }
+.info-value { color: #fff; }
+.separator { margin: 0 15px; color: #222; }
+
+/* Responsive */
+@media (max-width: 968px) {
+    .gallery-container { grid-template-columns: 1px; text-align: center; }
+    .info-box { border-left: none; border-top: 2px solid #ff6600; padding: 25px 0 0; }
+    .gallery-title { font-size: 3rem; }
+}

@@ -1,0 +1,239 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Elakkan scroll kiri-kanan */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+}
+
+.main-logo { height: 140px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #ff6600; }
+
+
+/* --- GRAND AMERICAN TOURING PAGE STYLE (UNIT PX) --- */
+
+/* Tajuk Center */
+.touring-header {
+    background: #000;
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+.category-label {
+    color: #ff6600;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 18px; /* Tukar dari 1.1rem */
+}
+
+.touring-header h1 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px; /* Tukar dari 5.5rem (Saiz gempak) */
+    letter-spacing: 10px;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+.header-line {
+    width: 150px;
+    height: 4px;
+    background: #ff6600;
+    margin: 0 auto;
+}
+
+/* Video Fit Kanan Kiri (Full Width) */
+.touring-video-section {
+    width: 100%;
+    background: #000;
+}
+
+.video-full-wrapper {
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+
+.video-fluid {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+/* Responsif untuk Phone */
+@media (max-width: 768px) {
+    .touring-header h1 {
+        font-size: 45px; /* Tukar dari 2.8rem */
+        letter-spacing: 5px;
+    }
+    
+    .category-label {
+        font-size: 14px;
+    }
+}
+
+/* --- TOURING DESCRIPTION STYLE --- */
+.touring-description-section {
+    background: #000;
+    padding: 60px 40px; /* Jarak atas bawah dan tepi */
+    border-top: 1px solid #333; /* Garisan halus sebagai pemisah */
+}
+
+.desc-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Tolak butang ke hujung kanan */
+    align-items: center; /* Center-kan secara menegak */
+    gap: 40px;
+}
+
+/* Tulisan Area */
+.text-area {
+    flex: 2; /* Biarkan bahagian tulisan ambil lebih banyak ruang */
+}
+
+.text-area h1 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px; /* Saiz pixel */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.text-area p {
+    color: #bbb;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Saiz pixel */
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Butang Area */
+.btn-collection {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #ff6600; /* Border oren khas */
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-collection:hover {
+    background: #ff6600;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
+}
+
+/* --- CSS UNTUK GAMBAR MOTOR FIT CANTIK --- */
+
+.model-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.model-card {
+    display: block;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff6600;
+    border-radius: 12px;
+    padding: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.model-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+}
+
+.model-image-container {
+    position: relative;
+    width: 100%;
+    /* Menggunakan ratio 16:9 supaya nampak 'landscape' yang sempurna */
+    aspect-ratio: 16 / 9; 
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a; /* Warna gelap sementara gambar load */
+}
+
+.model-image-container img {
+    width: 100%;
+    height: 100%;
+    /* 'Cover' akan pastikan gambar fit sepenuhnya tanpa nampak penyet */
+    object-fit: cover; 
+    /* 'Center' memastikan fokus gambar sentiasa di tengah */
+    object-position: center; 
+    transition: transform 0.5s ease;
+}
+
+/* Effect zoom sikit bila hover */
+.model-card:hover .model-image-container img {
+    transform: scale(1.08);
+}
+
+.model-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 15px 0 5px;
+    text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .model-cards-grid {
+        grid-template-columns: 1fr; /* Jadi satu kolum kat phone */
+    }
+    .model-card h3 {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,323 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Elakkan scroll kiri-kanan */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+}
+
+.main-logo { height: 140px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #ff6600; }
+
+
+/* --- MAP FULL WIDTH STYLE --- */
+.map-full-section {
+    width: 100%;
+    background: #000;
+    padding-top: 50px; /* Jarak sikit dengan section atas */
+}
+
+.map-title-overlay {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.map-title-overlay h2 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.map-box-full {
+    width: 100vw; /* Guna Viewport Width untuk full skrin */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    line-height: 0; /* Buang gap halus kat bawah iframe */
+}
+
+.map-box-full iframe {
+    width: 100%;
+    height: 500px; /* Kau boleh adjust tinggi ni ikut suka */
+    filter: grayscale(100%) invert(90%) contrast(90%); /* Tema dark mode gempak */
+}
+
+/* Buang padding kalau container utama website kau ada padding */
+body, html {
+    overflow-x: hidden; /* Elak scroll bar mendatar keluar */
+}
+
+/* --- ULTIMATE COMBINED CONTACT DESIGN --- */
+.contact-command-center {
+    position: relative;
+    background: #000;
+    padding: 100px 20px;
+    color: #fff;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* 1. Background Styles */
+.contact-bg-blur { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.contact-bg-blur img { width: 100%; height: 100%; object-fit: cover; filter: blur(20px); transform: scale(1.1); }
+.dark-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); }
+
+/* 2. Mega Center Title */
+.hero-location-center { position: relative; z-index: 5; text-align: center; padding-bottom: 80px; }
+.text-wrapper { position: relative; display: inline-block; }
+.bg-text-outline { font-family: 'Oswald', sans-serif; font-size: 110px; font-weight: 900; color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2); letter-spacing: 15px; margin: 0; text-transform: uppercase; }
+.fg-text-solid { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oswald', sans-serif; font-size: 70px; color: #ff6600; letter-spacing: 8px; text-transform: uppercase; text-shadow: 0 0 30px rgba(255, 102, 0, 0.5); }
+.neon-divider { width: 200px; height: 4px; background: #ff6600; margin: 20px auto 0; box-shadow: 0 0 15px #ff6600; }
+
+/* 3. Main Container Layout */
+.command-container { position: relative; z-index: 5; max-width: 1200px; margin: 0 auto; display: flex; gap: 60px; }
+.command-info { flex: 1; }
+.glitch-text { font-family: 'Oswald', sans-serif; font-size: 45px; margin-bottom: 25px; }
+
+/* Info Side Styles */
+.hq-address { color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 30px; }
+.contact-list { list-style: none; padding: 0; }
+.contact-list li { display: flex; align-items: center; margin-bottom: 15px; font-size: 17px; }
+.c-icon { color: #ff6600; margin-right: 15px; font-size: 18px; width: 25px; }
+.c-text { color: #ff6600; font-weight: bold; }
+.c-text small { color: #888; font-weight: normal; margin-left: 5px; }
+.btn-directions { display: inline-block; margin-top: 25px; background: #ff6600; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: bold; font-family: 'Oswald'; }
+
+/* 4. Form Side (Glassmorphism) */
+.command-form-box { flex: 1.2; background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(20px); border: 1px solid rgba(255, 102, 0, 0.3); padding: 50px; }
+.input-row { display: flex; gap: 20px; }
+.input-group { position: relative; margin-bottom: 35px; flex: 1; }
+.input-group input, .input-group textarea { width: 100%; background: transparent; border: none; border-bottom: 2px solid #333; color: #fff; padding: 10px 0; font-family: 'Oswald'; outline: none; }
+.input-group label { position: absolute; top: 10px; left: 0; color: #666; transition: 0.4s; pointer-events: none; text-transform: uppercase; font-family: 'Oswald'; }
+.input-group input:focus ~ label, .input-group input:valid ~ label { top: -20px; font-size: 12px; color: #ff6600; }
+.highlight { position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #ff6600; transition: 0.5s; box-shadow: 0 0 10px #ff6600; }
+.input-group input:focus ~ .highlight { width: 100%; }
+
+/* Buttons */
+.btn-send-command { width: 100%; background: #ff6600; color: #000; padding: 20px; border: none; font-weight: 900; font-family: 'Oswald'; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+.btn-send-command:hover { background: #fff; transform: translateY(-3px); }
+
+.back-home-wrapper { margin-top: 25px; text-align: center; }
+.btn-back-home { color: #666; text-decoration: none; font-family: 'Oswald'; font-weight: bold; letter-spacing: 2px; font-size: 13px; transition: 0.3s; display: inline-flex; align-items: center; }
+.btn-back-home:hover { color: #ff6600; }
+.btn-back-home:hover .arrow-left { transform: translateX(-5px); }
+.arrow-left { margin-right: 8px; transition: 0.3s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .command-container { flex-direction: column; }
+    .bg-text-outline { font-size: 60px; }
+    .fg-text-solid { font-size: 40px; }
+    .input-row { flex-direction: column; gap: 0; }
+}
+
+/* --- FIX UNTUK YOUR INQUIRY (TEXTAREA) --- */
+
+.input-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.input-group textarea {
+    width: 100%;
+    height: 120px; /* Saiz kotak inquiry */
+    padding: 15px 0 10px 0; /* Tambah padding atas supaya teks tak langgar label */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    outline: none;
+    resize: none; /* Elak user tarik saiz kotak */
+    display: block;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px; /* Kedudukan asal label di tengah kotak */
+    left: 0;
+    color: #888;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* FIX: Label akan naik ke atas apabila:
+   1. Kotak di-klik (focus)
+   2. Kotak mempunyai tulisan (valid)
+*/
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+    top: -20px; /* Label lompat ke atas kotak */
+    font-size: 12px;
+    color: #ff6600; /* Warna oren Harley */
+    letter-spacing: 4px;
+}
+
+.input-group .highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6600;
+    transition: 0.4s ease;
+}
+
+.input-group textarea:focus ~ .highlight {
+    width: 100%;
+}
+
+/* --- ULTIMATE CLEAN FOOTER CSS --- */
+.hd-footer-clean {
+    background: #000;
+    width: 100%;
+    color: #fff;
+    padding-top: 100px;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Logo Outline Header */
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.footer-logo-outline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    letter-spacing: 20px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.footer-sub-tag {
+    color: #ff6600;
+    letter-spacing: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+/* Social Media Grid */
+.footer-social-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #111;
+}
+
+.social-grid {
+    display: flex;
+    gap: 45px;
+}
+
+.social-icon-link {
+    color: #ffffff;
+    font-size: 26px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-link:hover {
+    color: #ff6600;
+    transform: translateY(-8px);
+    filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.7));
+}
+
+/* Legal Bar Style (Porsche Look) */
+.footer-legal-bar {
+    padding: 50px 20px;
+    background: #050505;
+    border-top: 1px solid #111;
+}
+
+.legal-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 11px;
+    color: #666;
+    line-height: 2.2;
+    font-family: Arial, sans-serif;
+}
+
+.copyright-text a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.copyright-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.pipe {
+    margin: 0 10px;
+    color: #222;
+}
+
+/* Stealth Branding */
+.brand-name-footer {
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+    letter-spacing: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 40px;
+    opacity: 0.05;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-logo-outline { font-size: 35px; letter-spacing: 8px; }
+    .social-grid { gap: 25px; }
+    .brand-name-footer { font-size: 20px; letter-spacing: 10px; }
+}
